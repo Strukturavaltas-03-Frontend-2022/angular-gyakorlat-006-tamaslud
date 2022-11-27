@@ -1,1 +1,21 @@
-<p>events-list works!</p>
+
+<table class="table table-striped">
+  <thead>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Location</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ev of eventList">
+      <td>{{ ev.name }}</td>
+      <td>{{ ev.date }}</td>
+      <td>{{ ev.time }}</td>
+      <td>
+        <span *ngFor="let item of ev.location | keyvalue">
+          {{ item.value }} </span>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
